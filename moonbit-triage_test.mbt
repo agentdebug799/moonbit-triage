@@ -101,3 +101,22 @@ test "validation reports first out of range field" {
     content="Some(OutOfRange(field=\"eye\", value=0, min=1, max=4))",
   )
 }
+
+///|
+test "display helpers produce stable labels" {
+  inspect(
+    @moonbit-triage.severity_label(@moonbit-triage.Critical),
+    content="critical",
+  )
+  let err = @moonbit-triage.ValidationError::OutOfRange(
+    field="heart_rate",
+    value=260,
+    min=0,
+    max=250,
+  )
+  inspect(@moonbit-triage.validation_error_field(err), content="heart_rate")
+  inspect(
+    @moonbit-triage.validation_error_message(err),
+    content="heart_rate value 260 is outside the accepted range 0..250",
+  )
+}

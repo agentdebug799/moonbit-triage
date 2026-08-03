@@ -50,6 +50,8 @@ pub fn score_qsofa(QsofaInput) -> ScoreReport
 
 pub fn score_triage(TriageInput) -> TriageBundle
 
+pub fn severity_label(Severity) -> String
+
 pub fn triage_disclaimer() -> String
 
 pub fn validate_bool_scale(String, Int) -> ValidationError?
@@ -63,6 +65,10 @@ pub fn validate_qsofa(QsofaInput) -> ValidationError?
 pub fn validate_range(String, Int, Int, Int) -> ValidationError?
 
 pub fn validate_triage(TriageInput) -> ValidationError?
+
+pub fn validation_error_field(ValidationError) -> String
+
+pub fn validation_error_message(ValidationError) -> String
 
 // Errors
 
