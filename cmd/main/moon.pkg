@@ -1,0 +1,5 @@
+// import {
+//   "2515050243qyf/moonbit-triage" @lib,
+// }
+
+pkgtype(kind: "executable")
