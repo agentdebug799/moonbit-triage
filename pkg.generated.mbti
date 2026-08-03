@@ -1,0 +1,160 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "agentdebug799/moonbit-triage"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn clamp(Int, Int, Int) -> Int
+
+pub fn explanation(String, Int, String) -> Explanation
+
+pub fn gcs_severity(Int) -> Severity
+
+pub fn gcs_total(GcsInput) -> Int
+
+pub fn news2_consciousness_points(Consciousness) -> Int
+
+pub fn news2_heart_rate_points(Int) -> Int
+
+pub fn news2_oxygen_saturation_points(Int, Spo2Scale, Bool) -> Int
+
+pub fn news2_respiratory_rate_points(Int) -> Int
+
+pub fn news2_severity(Int, Bool) -> Severity
+
+pub fn news2_supplemental_oxygen_points(Bool) -> Int
+
+pub fn news2_systolic_bp_points(Int) -> Int
+
+pub fn news2_temperature_points(Int) -> Int
+
+pub fn qsofa_mentation_points(Int) -> Int
+
+pub fn qsofa_respiratory_rate_points(Int) -> Int
+
+pub fn qsofa_severity(Int) -> Severity
+
+pub fn qsofa_systolic_bp_points(Int) -> Int
+
+pub fn report(String, Int, Severity, String, Array[Explanation]) -> ScoreReport
+
+pub fn score_gcs(GcsInput) -> GcsReport
+
+pub fn score_gcs_as_report(GcsInput) -> ScoreReport
+
+pub fn score_news2(News2Input) -> ScoreReport
+
+pub fn score_qsofa(QsofaInput) -> ScoreReport
+
+pub fn score_triage(TriageInput) -> TriageBundle
+
+pub fn triage_disclaimer() -> String
+
+pub fn validate_bool_scale(String, Int) -> ValidationError?
+
+pub fn validate_gcs(GcsInput) -> ValidationError?
+
+pub fn validate_news2(News2Input) -> ValidationError?
+
+pub fn validate_qsofa(QsofaInput) -> ValidationError?
+
+pub fn validate_range(String, Int, Int, Int) -> ValidationError?
+
+pub fn validate_triage(TriageInput) -> ValidationError?
+
+// Errors
+
+// Types and methods
+pub(all) enum Consciousness {
+  Alert
+  NewConfusion
+  Voice
+  Pain
+  Unresponsive
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Explanation {
+  label : String
+  points : Int
+  detail : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct GcsInput {
+  eye : Int
+  verbal : Int
+  motor : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct GcsReport {
+  total : Int
+  eye : Int
+  verbal : Int
+  motor : Int
+  severity : Severity
+  explanations : Array[Explanation]
+  disclaimer : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct News2Input {
+  respiratory_rate : Int
+  oxygen_saturation : Int
+  spo2_scale : Spo2Scale
+  supplemental_oxygen : Bool
+  temperature_tenths_c : Int
+  systolic_bp : Int
+  heart_rate : Int
+  consciousness : Consciousness
+} derive(Eq, @debug.Debug)
+
+pub(all) struct QsofaInput {
+  respiratory_rate : Int
+  systolic_bp : Int
+  gcs_total : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ScoreReport {
+  instrument : String
+  score : Int
+  severity : Severity
+  interpretation : String
+  explanations : Array[Explanation]
+  disclaimer : String
+} derive(Eq, @debug.Debug)
+
+pub(all) enum Severity {
+  Low
+  Medium
+  High
+  Critical
+} derive(Eq, @debug.Debug)
+
+pub(all) enum Spo2Scale {
+  Scale1
+  Scale2
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TriageBundle {
+  news2 : ScoreReport
+  qsofa : ScoreReport
+  gcs : ScoreReport
+  overall : Severity
+  summary : String
+  disclaimer : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TriageInput {
+  news2 : News2Input
+  gcs : GcsInput
+} derive(Eq, @debug.Debug)
+
+pub(all) enum ValidationError {
+  OutOfRange(field~ : String, value~ : Int, min~ : Int, max~ : Int)
+  InvalidScale(field~ : String, value~ : Int)
+} derive(Eq, @debug.Debug)
+
+// Type aliases
+
+// Traits
+

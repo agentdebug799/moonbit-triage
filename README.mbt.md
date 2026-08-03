@@ -38,6 +38,7 @@ Summary: At least one score is in its highest concern band. Use local escalation
 ## Minimal Example
 
 ```mbt check
+///|
 test "README NEWS2 example" {
   let report = @moonbit-triage.score_news2({
     respiratory_rate: 16,
@@ -84,5 +85,5 @@ medical device and must not replace clinician judgment.
 - MoonBit module: `agentdebug799/moonbit-triage`.
 - License: Apache-2.0.
 - Preferred target: `wasm-gc`.
-- Validation used for release: `moon fmt --deny-warn`, `moon info --deny-warn`,
-  `moon check`, and `moon test`.
+- Validation used for release: `moon fmt --check`, `moon check --deny-warn`,
+  `moon info`, and `moon test --deny-warn`.

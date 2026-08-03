@@ -85,9 +85,12 @@ test "combined triage uses highest concern level" {
   })
   inspect(bundle.news2.score, content="3")
   inspect(bundle.qsofa.score, content="1")
-  debug_inspect(bundle.overall, content=(
-    #|Medium
-  ))
+  debug_inspect(
+    bundle.overall,
+    content=(
+      #|Medium
+    ),
+  )
 }
 
 ///|
