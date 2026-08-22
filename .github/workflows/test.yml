@@ -56,6 +56,9 @@ jobs:
       - name: Run CLI example
         run: moon run cmd/main
 
+      - name: Run benchmark smoke test
+        run: moon run cmd/benchmark
+
   native:
     name: Native checks
     runs-on: ubuntu-latest
@@ -80,3 +83,9 @@ jobs:
           moon version --all
           moon check --target native --deny-warn
           moon test --target native --deny-warn
+
+      - name: Native coverage summary
+        run: |
+          moon test --target native --deny-warn --enable-coverage
+          moon coverage analyze > coverage-summary.txt
+          tail -n 1 coverage-summary.txt

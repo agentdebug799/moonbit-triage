@@ -135,8 +135,9 @@ The test suite covers threshold transitions, invalid ranges, aggregate scores,
 clinical edge cases, longitudinal data quality, pathway decisions, registry
 diffs, report serialization, and deterministic summaries. The current native
 coverage run executes 2,349 of 3,354 instrumented lines (70.0%). GitHub Actions
-runs formatting, all-target checks, public API generation, wasm-gc tests, native
-tests, and a coverage summary on Linux, macOS, and Windows.
+runs formatting, all-target checks, public API generation, wasm-gc tests, CLI
+and benchmark smoke tests on Linux, macOS, and Windows, plus native tests and a
+coverage summary on Linux.
 
 ## Development notes
 
