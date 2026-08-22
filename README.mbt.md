@@ -5,9 +5,15 @@ clinical score computation in education, software validation, data-quality
 pipelines, and prototype integrations. It returns component contributions and
 structured range errors so a caller can inspect exactly how a result was made.
 
-The library computes NEWS2, qSOFA, GCS, SIRS, MEWS, SOFA, PEWS, CURB-65, Shock
-Index, ROX Index, Wells PE, HEART, and CHA2DS2-VASc. It also provides combined
-reports, batch summaries, and measurement-quality flags.
+The library computes early-warning, cardiorespiratory, neurologic, trauma,
+gastrointestinal, renal/hepatic, perioperative, and pediatric/obstetric scores,
+including NEWS2, qSOFA, GCS, SIRS, MEWS, SOFA, PEWS, CURB-65, Shock Index, ROX,
+Wells, HEART, CHA2DS2-VASc, PESI, BODE, qCSI, Hestia, RTS, ISS, NIHSS, FOUR,
+ABCD2, APACHE II, SMART-COP, Caprini, Padua, STOP-Bang, ARISCAT, Child-Pugh,
+MELD-Na, Glasgow-Blatchford, AKI, BISAP, Ranson, Alvarado, Bishop, and
+preeclampsia feature checks. It also provides observation timelines, assessment
+ledgers, pathway decisions, audit events, registry diffs, batch summaries, and
+measurement-quality flags.
 
 ## Core capabilities
 
@@ -17,6 +23,10 @@ reports, batch summaries, and measurement-quality flags.
 - Integer-scaled ratio APIs (`Shock Index x100`, `ROX Index x100`) for portable,
   deterministic results across MoonBit targets.
 - Batch summaries and quality flags for form or data-pipeline integration.
+- Observation timelines, trend extraction, threshold evaluation, and freshness
+  checks for longitudinal data.
+- Assessment ledgers, deterministic pathway escalation, audit events, and a
+  versioned instrument registry for traceable integrations.
 - No external runtime dependencies; `wasm-gc` is the preferred target.
 
 ## Quick start
@@ -75,8 +85,11 @@ extra dependencies. Each `ScoreReport` includes:
 - `disclaimer`: safety boundary text.
 
 The root package owns the public data types and scoring facade. Focused files
-contain each instrument; `quality.mbt` handles measurement metadata and
-`batch.mbt` handles deterministic aggregation. The generated
+contain each instrument family; `observation_pipeline.mbt` handles longitudinal
+measurements, `assessment.mbt` handles score snapshots, `pathway.mbt` handles
+escalation and audit events, and `registry*.mbt` handles instrument metadata
+and release diffs. `quality.mbt` handles measurement metadata and `batch.mbt`
+handles deterministic aggregation. The generated
 `pkg.generated.mbti` is checked in as a compact public API review surface.
 
 ## Sources and safety
@@ -119,9 +132,11 @@ when comparing runs.
 ## Tests and CI
 
 The test suite covers threshold transitions, invalid ranges, aggregate scores,
-quality flags, and deterministic summaries. GitHub Actions runs formatting,
-all-target checks, public API generation, wasm-gc tests, native tests, and a
-coverage summary on Linux, macOS, and Windows.
+clinical edge cases, longitudinal data quality, pathway decisions, registry
+diffs, report serialization, and deterministic summaries. The current native
+coverage run executes 2,349 of 3,354 instrumented lines (70.0%). GitHub Actions
+runs formatting, all-target checks, public API generation, wasm-gc tests, native
+tests, and a coverage summary on Linux, macOS, and Windows.
 
 ## Development notes
 

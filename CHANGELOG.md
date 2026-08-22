@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0
+
+- Added validated renal/hepatic, neurologic, trauma, emergency, perioperative,
+  pediatric, obstetric, and acute-abdominal scoring modules.
+- Added observation timelines, trend extraction, assessment ledgers, pathway
+  escalation, audit events, report formatting, and instrument registry diffs.
+- Expanded boundary and integration coverage to 50 tests with a native coverage
+  run of 2,349/3,354 instrumented lines (70.0%).
+- Added provenance entries for the new public scoring families and their
+  implementation scope.
+
 ## 0.1.0
 
 - Added NEWS2 scoring with component explanations.

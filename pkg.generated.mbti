@@ -6,6 +6,150 @@ import {
 }
 
 // Values
+pub fn abcd2_age_points(Int) -> Int
+
+pub fn abcd2_clinical_points(Bool, Bool) -> Int
+
+pub fn abcd2_diabetes_points(Bool) -> Int
+
+pub fn abcd2_duration_points(Int) -> Int
+
+pub fn abcd2_pressure_points(Int, Int) -> Int
+
+pub fn abcd2_severity(Int) -> Severity
+
+pub fn aki_creatinine_stage(AkiInput) -> Int
+
+pub fn aki_severity(Int) -> Severity
+
+pub fn aki_stage(AkiInput) -> Int
+
+pub fn aki_urine_stage(AkiInput) -> Int
+
+pub fn alvarado_score(AlvaradoInput) -> Int
+
+pub fn alvarado_severity(Int) -> Severity
+
+pub fn apache_age_points(Int) -> Int
+
+pub fn apache_chronic_points(Bool) -> Int
+
+pub fn apache_creatinine_points(Int) -> Int
+
+pub fn apache_heart_rate_points(Int) -> Int
+
+pub fn apache_hematocrit_points(Int) -> Int
+
+pub fn apache_ii_score(ApacheIiInput) -> Int
+
+pub fn apache_ii_severity(Int) -> Severity
+
+pub fn apache_map_points(Int) -> Int
+
+pub fn apache_oxygenation_points(Int, Bool) -> Int
+
+pub fn apache_ph_points(Int) -> Int
+
+pub fn apache_potassium_points(Int) -> Int
+
+pub fn apache_respiratory_rate_points(Int) -> Int
+
+pub fn apache_sodium_points(Int) -> Int
+
+pub fn apache_temp_points(Int) -> Int
+
+pub fn apache_white_cell_points(Int) -> Int
+
+pub fn ariscat_age_points(Int) -> Int
+
+pub fn ariscat_anemia_points(Bool) -> Int
+
+pub fn ariscat_duration_points(Int) -> Int
+
+pub fn ariscat_emergency_points(Bool) -> Int
+
+pub fn ariscat_incision_points(Int) -> Int
+
+pub fn ariscat_infection_points(Bool) -> Int
+
+pub fn ariscat_oxygen_points(Int) -> Int
+
+pub fn ariscat_severity(Int) -> Severity
+
+pub fn assessment_summary(AssessmentLedger) -> AssessmentSummary
+
+pub fn audit_event(Int, String, String, ScoreReport, Int, String, String) -> AuditEvent
+
+pub fn audit_event_label(AuditEvent) -> String
+
+pub fn audit_event_labels(Array[AuditEvent]) -> Array[String]
+
+pub fn audit_ordered(AuditEvent, AuditEvent) -> Bool
+
+pub fn bisap_age_points(Int) -> Int
+
+pub fn bisap_bun_points(Int) -> Int
+
+pub fn bisap_effusion_points(Bool) -> Int
+
+pub fn bisap_mentation_points(Bool) -> Int
+
+pub fn bisap_score(BisapInput) -> Int
+
+pub fn bisap_severity(Int) -> Severity
+
+pub fn bisap_sirs_points(Int) -> Int
+
+pub fn bishop_consistency_points(Int) -> Int
+
+pub fn bishop_dilation_points(Int) -> Int
+
+pub fn bishop_effacement_points(Int) -> Int
+
+pub fn bishop_position_points(Int) -> Int
+
+pub fn bishop_score(BishopInput) -> Int
+
+pub fn bishop_severity(Int) -> Severity
+
+pub fn bishop_station_points(Int) -> Int
+
+pub fn bode_bmi_points(Int) -> Int
+
+pub fn bode_fev1_points(Int) -> Int
+
+pub fn bode_mrc_points(Int) -> Int
+
+pub fn bode_severity(Int) -> Severity
+
+pub fn bode_walk_points(Int) -> Int
+
+pub fn canadian_cspine_high_risk_count(CanadianCspineInput) -> Int
+
+pub fn canadian_cspine_low_risk_count(CanadianCspineInput) -> Int
+
+pub fn canadian_cspine_positive(CanadianCspineInput) -> Bool
+
+pub fn canadian_ct_head_high_risk_count(CanadianCtHeadInput) -> Int
+
+pub fn canadian_ct_head_medium_risk_count(CanadianCtHeadInput) -> Int
+
+pub fn canadian_ct_head_positive(CanadianCtHeadInput) -> Bool
+
+pub fn caprini_age_points(Int) -> Int
+
+pub fn caprini_bool_points(Bool, Int) -> Int
+
+pub fn caprini_five_point_count(CapriniInput) -> Int
+
+pub fn caprini_score(CapriniInput) -> Int
+
+pub fn caprini_severity(Int) -> Severity
+
+pub fn caprini_three_point_count(CapriniInput) -> Int
+
+pub fn caprini_two_point_count(CapriniInput) -> Int
+
 pub fn cha2ds2_vasc_age_points(Int) -> Int
 
 pub fn cha2ds2_vasc_flag_points(Bool) -> Int
@@ -14,7 +158,43 @@ pub fn cha2ds2_vasc_severity(Int) -> Severity
 
 pub fn cha2ds2_vasc_stroke_points(Bool) -> Int
 
+pub fn charlson_age_points(Int) -> Int
+
+pub fn charlson_bool_points(Bool, Int) -> Int
+
+pub fn charlson_common_points(CharlsonInput) -> Int
+
+pub fn charlson_score(CharlsonInput) -> Int
+
+pub fn charlson_severe_points(CharlsonInput) -> Int
+
+pub fn charlson_severity(Int) -> Severity
+
+pub fn charlson_systemic_points(CharlsonInput) -> Int
+
+pub fn charlson_vascular_points(CharlsonInput) -> Int
+
+pub fn child_pugh_albumin_points(Int) -> Int
+
+pub fn child_pugh_ascites_points(Int) -> Int
+
+pub fn child_pugh_bilirubin_points(Int) -> Int
+
+pub fn child_pugh_class(Int) -> String
+
+pub fn child_pugh_encephalopathy_points(Int) -> Int
+
+pub fn child_pugh_inr_points(Int) -> Int
+
+pub fn child_pugh_severity(Int) -> Severity
+
 pub fn clamp(Int, Int, Int) -> Int
+
+pub fn compare_metadata(InstrumentMetadata?, InstrumentMetadata?, String) -> RegistryChange
+
+pub fn compare_reports(ScoreReport, ScoreReport) -> ReportComparison
+
+pub fn compare_snapshots(ScoreSnapshot, ScoreSnapshot) -> SnapshotChange
 
 pub fn curbs65_age_points(Int) -> Int
 
@@ -28,13 +208,107 @@ pub fn curbs65_severity(Int) -> Severity
 
 pub fn curbs65_urea_points(Int) -> Int
 
+pub fn default_registry() -> InstrumentRegistry
+
+pub fn empty_ledger() -> AssessmentLedger
+
+pub fn empty_registry(String) -> InstrumentRegistry
+
+pub fn empty_timeline() -> Timeline
+
+pub fn escalation_rank(EscalationTier) -> Int
+
+pub fn escalation_tier_label(EscalationTier) -> String
+
+pub fn evaluate_pathway(Array[PathwayRule], Array[ScoreReport]) -> PathwayDecision
+
+pub fn evaluate_threshold(String, Int, Array[ThresholdBand]) -> RuleEvaluation
+
+pub fn evaluation_labels(Array[RuleEvaluation]) -> Array[String]
+
+pub fn evidence_status_label(EvidenceStatus) -> String
+
 pub fn explanation(String, Int, String) -> Explanation
+
+pub fn explanation_label(Explanation) -> String
+
+pub fn explanation_labels(Array[Explanation]) -> Array[String]
+
+pub fn four_score_severity(Int) -> Severity
+
+pub fn four_score_total(FourScoreInput) -> Int
+
+pub fn gbs_bool_points(Bool, Int) -> Int
+
+pub fn gbs_bun_points(Int) -> Int
+
+pub fn gbs_female_hemoglobin_points(Int) -> Int
+
+pub fn gbs_hemoglobin_points(Int, Bool) -> Int
+
+pub fn gbs_male_hemoglobin_points(Int) -> Int
+
+pub fn gbs_pressure_points(Int) -> Int
+
+pub fn gbs_pulse_points(Int) -> Int
+
+pub fn gbs_severity(Int) -> Severity
 
 pub fn gcs_severity(Int) -> Severity
 
 pub fn gcs_total(GcsInput) -> Int
 
+pub fn has_bled_severity(Int) -> Severity
+
 pub fn heart_severity(Int) -> Severity
+
+pub fn hestia_positive_points(Bool) -> Int
+
+pub fn hestia_severity(Int) -> Severity
+
+pub fn highest_concern_report(Array[ScoreReport]) -> ScoreReport?
+
+pub fn injury_severity_band(Int) -> Severity
+
+pub fn injury_severity_score(InjurySeverityInput) -> Int
+
+pub fn instrument_category_label(InstrumentCategory) -> String
+
+pub fn instrument_present(Array[ScoreReport], String) -> Bool
+
+pub fn ledger_add(AssessmentLedger, ScoreSnapshot) -> AssessmentLedger
+
+pub fn ledger_count_instrument(AssessmentLedger, String) -> Int
+
+pub fn ledger_highest_severity(AssessmentLedger) -> Severity
+
+pub fn ledger_instruments(AssessmentLedger) -> Array[String]
+
+pub fn ledger_latest(AssessmentLedger) -> ScoreSnapshot?
+
+pub fn ledger_latest_instrument(AssessmentLedger, String) -> ScoreSnapshot?
+
+pub fn ledger_scores(AssessmentLedger) -> Array[Int]
+
+pub fn ledger_size(AssessmentLedger) -> Int
+
+pub fn ledger_total_score(AssessmentLedger) -> Int
+
+pub fn matched_evaluations(Array[RuleEvaluation]) -> Array[RuleEvaluation]
+
+pub fn max_pathway_severity(Severity, Severity) -> Severity
+
+pub fn max_tier(EscalationTier, EscalationTier) -> EscalationTier
+
+pub fn meld_component_points(Int, Int, Int, Int) -> Int
+
+pub fn meld_na_score(MeldNaInput) -> Int
+
+pub fn meld_na_severity(Int) -> Severity
+
+pub fn metadata(String, String, InstrumentCategory, String, Int, Int, String, String, String, Array[String]) -> InstrumentMetadata
+
+pub fn metadata_same(InstrumentMetadata, InstrumentMetadata) -> Bool
 
 pub fn mews_consciousness_points(Consciousness) -> Int
 
@@ -64,6 +338,74 @@ pub fn news2_systolic_bp_points(Int) -> Int
 
 pub fn news2_temperature_points(Int) -> Int
 
+pub fn nexus_clears_cspine(NexusCspineInput) -> Bool
+
+pub fn nexus_positive_count(NexusCspineInput) -> Int
+
+pub fn nihss_severity(Int) -> Severity
+
+pub fn nihss_total(NihssInput) -> Int
+
+pub fn observation(ObservationKind, Int, MeasurementUnit, Int, String) -> Observation
+
+pub fn observation_age_minutes(Int, Observation) -> Int
+
+pub fn observation_delta(Observation, Observation) -> Int
+
+pub fn observation_is_fresh(Int, Observation, Int) -> Bool
+
+pub fn observation_is_ordered(Observation, Observation) -> Bool
+
+pub fn observation_issue_label(ObservationIssue) -> String
+
+pub fn observation_kind_label(ObservationKind) -> String
+
+pub fn observation_unit_label(MeasurementUnit) -> String
+
+pub fn ottawa_ankle_criterion_count(OttawaAnkleInput) -> Int
+
+pub fn ottawa_ankle_positive(OttawaAnkleInput) -> Bool
+
+pub fn padua_score(PaduaInput) -> Int
+
+pub fn padua_severity(Int) -> Severity
+
+pub fn pathway_decision_explanation(EscalationTier, EvidenceStatus, Severity, Int) -> String
+
+pub fn pathway_missing_instruments(PathwayRule, Array[ScoreReport]) -> Array[String]
+
+pub fn pathway_rule_labels(Array[PathwayRule]) -> Array[String]
+
+pub fn pathway_rule_matches(PathwayRule, Array[ScoreReport]) -> Bool
+
+pub fn pecarn_high_risk_count(PecarnHeadInput) -> Int
+
+pub fn pecarn_intermediate_count(PecarnHeadInput) -> Int
+
+pub fn pediatric_appendicitis_anorexia_points(Bool) -> Int
+
+pub fn pediatric_appendicitis_cough_points(Bool) -> Int
+
+pub fn pediatric_appendicitis_fever_points(Int) -> Int
+
+pub fn pediatric_appendicitis_lab_points(Bool, Bool) -> Int
+
+pub fn pediatric_appendicitis_migration_points(Bool) -> Int
+
+pub fn pediatric_appendicitis_nausea_points(Bool) -> Int
+
+pub fn pediatric_appendicitis_score(PediatricAppendicitisInput) -> Int
+
+pub fn pediatric_appendicitis_severity(Int) -> Severity
+
+pub fn pediatric_appendicitis_tenderness_points(Bool) -> Int
+
+pub fn perc_negative(PercInput) -> Bool
+
+pub fn perc_positive_count(PercInput) -> Int
+
+pub fn pesi_severity(Int) -> Severity
+
 pub fn pews_behavior_points(PewsBehavior) -> Int
 
 pub fn pews_cardiovascular_points(PewsCardiovascular) -> Int
@@ -75,6 +417,30 @@ pub fn pews_oxygen_points(PewsOxygenSupport) -> Int
 pub fn pews_respiratory_points(PewsRespiratory) -> Int
 
 pub fn pews_severity(Int) -> Severity
+
+pub fn preeclampsia_liver_points(Int, Int, Bool) -> Int
+
+pub fn preeclampsia_neurologic_points(Bool, Bool) -> Int
+
+pub fn preeclampsia_other_points(Bool, Bool) -> Int
+
+pub fn preeclampsia_platelet_points(Int) -> Int
+
+pub fn preeclampsia_pressure_points(Int, Int) -> Int
+
+pub fn preeclampsia_renal_points(Int) -> Int
+
+pub fn preeclampsia_score(PreeclampsiaInput) -> Int
+
+pub fn preeclampsia_severity(Int) -> Severity
+
+pub fn qcsi_flow_points(Int) -> Int
+
+pub fn qcsi_oxygen_points(Int) -> Int
+
+pub fn qcsi_respiratory_points(Int) -> Int
+
+pub fn qcsi_severity(Int) -> Severity
 
 pub fn qsofa_mentation_points(Int) -> Int
 
@@ -96,29 +462,265 @@ pub fn quality_is_usable(QualityFlag) -> Bool
 
 pub fn quality_label(MeasurementQuality) -> String
 
+pub fn ranson_48_hour_score(RansonInput) -> Int
+
+pub fn ranson_admission_score(RansonInput) -> Int
+
+pub fn ranson_score(RansonInput) -> Int
+
+pub fn ranson_severity(Int) -> Severity
+
+pub fn rcri_flag_points(Bool) -> Int
+
+pub fn rcri_severity(Int) -> Severity
+
+pub fn registry_add(InstrumentRegistry, InstrumentMetadata) -> InstrumentRegistry
+
+pub fn registry_added(Array[RegistryChange]) -> Array[RegistryChange]
+
+pub fn registry_category_count(InstrumentRegistry, InstrumentCategory) -> Int
+
+pub fn registry_category_counts(InstrumentRegistry) -> Array[String]
+
+pub fn registry_category_entries(InstrumentRegistry, InstrumentCategory) -> Array[InstrumentMetadata]
+
+pub fn registry_change_kind_label(RegistryChangeKind) -> String
+
+pub fn registry_changes(InstrumentRegistry, InstrumentRegistry) -> Array[RegistryChange]
+
+pub fn registry_contains(InstrumentRegistry, String) -> Bool
+
+pub fn registry_display_labels(InstrumentRegistry) -> Array[String]
+
+pub fn registry_filter_valid(InstrumentRegistry) -> InstrumentRegistry
+
+pub fn registry_find(InstrumentRegistry, String) -> InstrumentMetadata?
+
+pub fn registry_has_duplicate_ids(InstrumentRegistry) -> Bool
+
+pub fn registry_ids(InstrumentRegistry) -> Array[String]
+
+pub fn registry_is_release_ready(InstrumentRegistry) -> Bool
+
+pub fn registry_keyword_search(InstrumentRegistry, String) -> Array[InstrumentMetadata]
+
+pub fn registry_merge(InstrumentRegistry, InstrumentRegistry) -> InstrumentRegistry
+
+pub fn registry_removed(Array[RegistryChange]) -> Array[RegistryChange]
+
+pub fn registry_revision_label(InstrumentRegistry) -> String
+
+pub fn registry_select(InstrumentRegistry, Array[String]) -> InstrumentRegistry
+
+pub fn registry_size(InstrumentRegistry) -> Int
+
+pub fn registry_unchanged(Array[RegistryChange]) -> Array[RegistryChange]
+
+pub fn registry_updated(Array[RegistryChange]) -> Array[RegistryChange]
+
+pub fn registry_validate(InstrumentRegistry) -> Bool
+
+pub fn render_change(ScoreSnapshot, ScoreSnapshot) -> String
+
+pub fn render_explanation(Explanation) -> String
+
+pub fn render_explanations(Array[Explanation]) -> String
+
+pub fn render_ledger(AssessmentLedger) -> String
+
+pub fn render_metadata(InstrumentMetadata) -> String
+
+pub fn render_pathway_decision(PathwayDecision) -> String
+
+pub fn render_registry(InstrumentRegistry) -> String
+
+pub fn render_registry_change(RegistryChange) -> String
+
+pub fn render_registry_changes(Array[RegistryChange]) -> String
+
+pub fn render_report(ScoreReport) -> String
+
+pub fn render_report_comparison(ReportComparison) -> String
+
+pub fn render_report_quality(ReportQuality) -> String
+
+pub fn render_snapshot(ScoreSnapshot) -> String
+
+pub fn render_trace_summary(TraceSummary) -> String
+
 pub fn report(String, Int, Severity, String, Array[Explanation]) -> ScoreReport
+
+pub fn report_average_delta_x100(Array[ScoreReport], Array[ScoreReport]) -> Int
+
+pub fn report_average_score_x100(Array[ScoreReport]) -> Int
+
+pub fn report_bundle_is_coherent(Array[ScoreReport]) -> Bool
+
+pub fn report_catalog(Array[ScoreReport]) -> String
+
+pub fn report_catalog_line(ScoreReport) -> String
+
+pub fn report_comparison_label(ReportComparison) -> String
+
+pub fn report_count_at_or_above(Array[ScoreReport], Severity) -> Int
+
+pub fn report_csv_header() -> String
+
+pub fn report_csv_row(ScoreReport) -> String
+
+pub fn report_delta_label(Int) -> String
+
+pub fn report_disclaimer_set(Array[ScoreReport]) -> Array[String]
+
+pub fn report_explanation_count(Array[ScoreReport]) -> Int
+
+pub fn report_explanation_total(ScoreReport) -> Int
+
+pub fn report_find(Array[ScoreReport], String) -> ScoreReport?
+
+pub fn report_has_explanation(ScoreReport, String) -> Bool
+
+pub fn report_has_severity(Array[ScoreReport], Severity) -> Bool
+
+pub fn report_header(ScoreReport) -> String
+
+pub fn report_instrument_names(Array[ScoreReport]) -> Array[String]
+
+pub fn report_interpretations(Array[ScoreReport]) -> Array[String]
+
+pub fn report_is_empty(ScoreReport) -> Bool
+
+pub fn report_is_more_concerning(ScoreReport, ScoreReport) -> Bool
+
+pub fn report_max_score(Array[ScoreReport]) -> Int
+
+pub fn report_min_score(Array[ScoreReport]) -> Int?
+
+pub fn report_nonempty(Array[ScoreReport]) -> Array[ScoreReport]
+
+pub fn report_points_for_label(ScoreReport, String) -> Int?
+
+pub fn report_quality(Array[ScoreReport]) -> ReportQuality
+
+pub fn report_quality_ready(ReportQuality) -> Bool
+
+pub fn report_range(Array[ScoreReport]) -> Int
+
+pub fn report_score_reconciles(ScoreReport) -> Bool
+
+pub fn report_score_reconciles_with_explanations(ScoreReport, Array[Explanation]) -> Bool
+
+pub fn report_score_sum(Array[ScoreReport]) -> Int
+
+pub fn report_severity_rank(ScoreReport) -> Int
+
+pub fn report_severity_vector(Array[ScoreReport]) -> Array[String]
+
+pub fn report_summary_line(Array[ScoreReport]) -> String
+
+pub fn report_value_vector(Array[ScoreReport]) -> Array[Int]
+
+pub fn reports_at_or_above(Array[ScoreReport], Severity) -> Array[ScoreReport]
+
+pub fn reports_csv(Array[ScoreReport]) -> String
+
+pub fn reports_have_invalid_score(Array[ScoreReport]) -> Bool
+
+pub fn reports_highest_severity(Array[ScoreReport]) -> Severity
+
+pub fn reports_render_lines(Array[ScoreReport]) -> Array[String]
+
+pub fn reports_with_severity(Array[ScoreReport], Severity) -> Array[ScoreReport]
+
+pub fn revised_trauma_score(RevisedTraumaInput) -> Int
+
+pub fn revised_trauma_severity(Int) -> Severity
 
 pub fn rox_severity(Int) -> Severity
 
 pub fn rox_x100(RoxInput) -> Int
 
+pub fn score_abcd2(Abcd2Input) -> ScoreReport
+
+pub fn score_aki(AkiInput) -> ScoreReport
+
+pub fn score_alvarado(AlvaradoInput) -> ScoreReport
+
+pub fn score_apache_ii(ApacheIiInput) -> ScoreReport
+
+pub fn score_ariscat(AriscatInput) -> ScoreReport
+
+pub fn score_bisap(BisapInput) -> ScoreReport
+
+pub fn score_bishop(BishopInput) -> ScoreReport
+
+pub fn score_bode(BodeInput) -> ScoreReport
+
+pub fn score_canadian_cspine(CanadianCspineInput) -> ScoreReport
+
+pub fn score_canadian_ct_head(CanadianCtHeadInput) -> ScoreReport
+
+pub fn score_caprini(CapriniInput) -> ScoreReport
+
 pub fn score_cha2ds2_vasc(Cha2ds2VascInput) -> ScoreReport
 
+pub fn score_charlson(CharlsonInput) -> ScoreReport
+
+pub fn score_child_pugh(ChildPughInput) -> ScoreReport
+
 pub fn score_curbs65(Curbs65Input) -> ScoreReport
+
+pub fn score_four(FourScoreInput) -> ScoreReport
 
 pub fn score_gcs(GcsInput) -> GcsReport
 
 pub fn score_gcs_as_report(GcsInput) -> ScoreReport
 
+pub fn score_glasgow_blatchford(GlasgowBlatchfordInput) -> ScoreReport
+
+pub fn score_has_bled(HasBledInput) -> ScoreReport
+
 pub fn score_heart(HeartInput) -> ScoreReport
+
+pub fn score_hestia(HestiaInput) -> ScoreReport
+
+pub fn score_injury_severity(InjurySeverityInput) -> ScoreReport
+
+pub fn score_meld_na(MeldNaInput) -> ScoreReport
 
 pub fn score_mews(MewsInput) -> ScoreReport
 
 pub fn score_news2(News2Input) -> ScoreReport
 
+pub fn score_nexus_cspine(NexusCspineInput) -> ScoreReport
+
+pub fn score_nihss(NihssInput) -> ScoreReport
+
+pub fn score_ottawa_ankle(OttawaAnkleInput) -> ScoreReport
+
+pub fn score_padua(PaduaInput) -> ScoreReport
+
+pub fn score_pecarn_head(PecarnHeadInput) -> ScoreReport
+
+pub fn score_pediatric_appendicitis(PediatricAppendicitisInput) -> ScoreReport
+
+pub fn score_perc(PercInput) -> ScoreReport
+
+pub fn score_pesi(PesiInput) -> ScoreReport
+
 pub fn score_pews(PewsInput) -> ScoreReport
 
+pub fn score_preeclampsia(PreeclampsiaInput) -> ScoreReport
+
+pub fn score_qcsi(QcsiInput) -> ScoreReport
+
 pub fn score_qsofa(QsofaInput) -> ScoreReport
+
+pub fn score_ranson(RansonInput) -> ScoreReport
+
+pub fn score_rcri(RcriInput) -> ScoreReport
+
+pub fn score_revised_trauma(RevisedTraumaInput) -> ScoreReport
 
 pub fn score_rox(RoxInput) -> ScoreReport
 
@@ -126,13 +728,23 @@ pub fn score_shock_index(ShockIndexInput) -> ScoreReport
 
 pub fn score_sirs(SirsInput) -> ScoreReport
 
+pub fn score_smart_cop(SmartCopInput) -> ScoreReport
+
 pub fn score_sofa(SofaInput) -> ScoreReport
 
+pub fn score_stop_bang(StopBangInput) -> ScoreReport
+
+pub fn score_timi(TimiInput) -> ScoreReport
+
 pub fn score_triage(TriageInput) -> TriageBundle
+
+pub fn score_wells_dvt(WellsDvtInput) -> ScoreReport
 
 pub fn score_wells_pe(WellsPeInput) -> ScoreReport
 
 pub fn severity_label(Severity) -> String
+
+pub fn severity_rank(Severity) -> Int
 
 pub fn shock_index_severity(Int) -> Severity
 
@@ -148,6 +760,38 @@ pub fn sirs_temperature_points(Int) -> Int
 
 pub fn sirs_white_cell_points(Int, Int) -> Int
 
+pub fn smart_cop_age_points(Int) -> Int
+
+pub fn smart_cop_albumin_points(Int) -> Int
+
+pub fn smart_cop_confusion_points(Bool) -> Int
+
+pub fn smart_cop_infiltrate_points(Bool) -> Int
+
+pub fn smart_cop_oxygen_points(Int) -> Int
+
+pub fn smart_cop_ph_points(Int) -> Int
+
+pub fn smart_cop_pressure_points(Int) -> Int
+
+pub fn smart_cop_respiration_points(Int, Int) -> Int
+
+pub fn smart_cop_score(SmartCopInput) -> Int
+
+pub fn smart_cop_severity(Int) -> Severity
+
+pub fn snapshot(String, Int, Severity, Int, String) -> ScoreSnapshot
+
+pub fn snapshot_age_minutes(Int, ScoreSnapshot) -> Int
+
+pub fn snapshot_change_amount(SnapshotChange) -> Int
+
+pub fn snapshot_change_label(SnapshotChange) -> String
+
+pub fn snapshot_from_report(ScoreReport, Int, String) -> ScoreSnapshot
+
+pub fn snapshot_is_fresh(Int, ScoreSnapshot, Int) -> Bool
+
 pub fn sofa_bilirubin_points(Int) -> Int
 
 pub fn sofa_circulation_points(Int, VasopressorLevel) -> Int
@@ -162,31 +806,139 @@ pub fn sofa_respiratory_points(Int, Bool) -> Int
 
 pub fn sofa_severity(Int) -> Severity
 
+pub fn sort_audit_events(Array[AuditEvent]) -> Array[AuditEvent]
+
+pub fn stop_bang_score(StopBangInput) -> Int
+
+pub fn stop_bang_severity(Int) -> Severity
+
+pub fn sum_evaluations(Array[RuleEvaluation]) -> Int
+
 pub fn summarize_quality(Array[QualityFlag]) -> QualitySummary
 
 pub fn summarize_reports(Array[ScoreReport]) -> ReportSummary
 
+pub fn threshold_band(String, Int, Int, Int, String) -> ThresholdBand
+
+pub fn threshold_contains(ThresholdBand, Int) -> Bool
+
+pub fn threshold_find(Array[ThresholdBand], Int) -> ThresholdBand?
+
+pub fn threshold_labels(Array[ThresholdBand]) -> Array[String]
+
+pub fn threshold_points(Array[ThresholdBand], Int) -> Int?
+
+pub fn timeline_add(Timeline, Observation) -> Timeline
+
+pub fn timeline_count_of(Timeline, ObservationKind) -> Int
+
+pub fn timeline_latest(Timeline) -> Observation?
+
+pub fn timeline_latest_of(Timeline, ObservationKind) -> Observation?
+
+pub fn timeline_length(Timeline) -> Int
+
+pub fn timeline_summary(Timeline) -> TimelineSummary
+
+pub fn timeline_valid(Timeline) -> Bool
+
+pub fn timi_risk_factor_points(Int) -> Int
+
+pub fn timi_severity(Int) -> Severity
+
+pub fn trace_summary(Array[AuditEvent]) -> TraceSummary
+
+pub fn trauma_gcs_points(Int) -> Int
+
+pub fn trauma_pressure_points(Int) -> Int
+
+pub fn trauma_respiration_points(Int) -> Int
+
+pub fn trend_direction(Trend) -> String
+
+pub fn trend_for(Timeline, ObservationKind) -> Trend?
+
 pub fn triage_disclaimer() -> String
+
+pub fn validate_abcd2(Abcd2Input) -> ValidationError?
+
+pub fn validate_aki(AkiInput) -> ValidationError?
+
+pub fn validate_alvarado(AlvaradoInput) -> ValidationError?
+
+pub fn validate_apache_ii(ApacheIiInput) -> ValidationError?
+
+pub fn validate_ariscat(AriscatInput) -> ValidationError?
+
+pub fn validate_audit_event(AuditEvent) -> ValidationError?
+
+pub fn validate_bisap(BisapInput) -> ValidationError?
+
+pub fn validate_bishop(BishopInput) -> ValidationError?
+
+pub fn validate_bode(BodeInput) -> ValidationError?
 
 pub fn validate_bool_scale(String, Int) -> ValidationError?
 
+pub fn validate_canadian_cspine(CanadianCspineInput) -> ValidationError?
+
+pub fn validate_canadian_ct_head(CanadianCtHeadInput) -> ValidationError?
+
+pub fn validate_caprini(CapriniInput) -> ValidationError?
+
 pub fn validate_cha2ds2_vasc(Cha2ds2VascInput) -> ValidationError?
+
+pub fn validate_charlson(CharlsonInput) -> ValidationError?
+
+pub fn validate_child_pugh(ChildPughInput) -> ValidationError?
 
 pub fn validate_curbs65(Curbs65Input) -> ValidationError?
 
+pub fn validate_four_score(FourScoreInput) -> ValidationError?
+
 pub fn validate_gcs(GcsInput) -> ValidationError?
 
+pub fn validate_glasgow_blatchford(GlasgowBlatchfordInput) -> ValidationError?
+
 pub fn validate_heart(HeartInput) -> ValidationError?
+
+pub fn validate_injury_severity(InjurySeverityInput) -> ValidationError?
+
+pub fn validate_meld_na(MeldNaInput) -> ValidationError?
+
+pub fn validate_metadata(InstrumentMetadata) -> Bool
 
 pub fn validate_mews(MewsInput) -> ValidationError?
 
 pub fn validate_news2(News2Input) -> ValidationError?
 
+pub fn validate_nihss(NihssInput) -> ValidationError?
+
+pub fn validate_observation(Observation) -> ObservationIssue?
+
+pub fn validate_padua(PaduaInput) -> ValidationError?
+
+pub fn validate_pecarn_head(PecarnHeadInput) -> ValidationError?
+
+pub fn validate_pediatric_appendicitis(PediatricAppendicitisInput) -> ValidationError?
+
+pub fn validate_perc(PercInput) -> ValidationError?
+
+pub fn validate_pesi(PesiInput) -> ValidationError?
+
 pub fn validate_pews(PewsInput) -> ValidationError?
+
+pub fn validate_preeclampsia(PreeclampsiaInput) -> ValidationError?
+
+pub fn validate_qcsi(QcsiInput) -> ValidationError?
 
 pub fn validate_qsofa(QsofaInput) -> ValidationError?
 
 pub fn validate_range(String, Int, Int, Int) -> ValidationError?
+
+pub fn validate_ranson(RansonInput) -> ValidationError?
+
+pub fn validate_revised_trauma(RevisedTraumaInput) -> ValidationError?
 
 pub fn validate_rox(RoxInput) -> ValidationError?
 
@@ -194,7 +946,11 @@ pub fn validate_shock_index(ShockIndexInput) -> ValidationError?
 
 pub fn validate_sirs(SirsInput) -> ValidationError?
 
+pub fn validate_smart_cop(SmartCopInput) -> ValidationError?
+
 pub fn validate_sofa(SofaInput) -> ValidationError?
+
+pub fn validate_timi(TimiInput) -> ValidationError?
 
 pub fn validate_triage(TriageInput) -> ValidationError?
 
@@ -203,6 +959,8 @@ pub fn validate_wells_pe(WellsPeInput) -> ValidationError?
 pub fn validation_error_field(ValidationError) -> String
 
 pub fn validation_error_message(ValidationError) -> String
+
+pub fn wells_dvt_severity(Int) -> Severity
 
 pub fn wells_pe_dvt_points(Bool) -> Int
 
@@ -223,6 +981,163 @@ pub fn wells_pe_severity(Int) -> Severity
 // Errors
 
 // Types and methods
+pub(all) struct Abcd2Input {
+  age : Int
+  systolic_bp : Int
+  diastolic_bp : Int
+  unilateral_weakness : Bool
+  speech_impairment_without_weakness : Bool
+  symptom_duration_minutes : Int
+  diabetes : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct AkiInput {
+  baseline_creatinine_hundredths : Int
+  current_creatinine_hundredths : Int
+  urine_rate_hundredths_ml_kg_h : Int
+  urine_duration_hours : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct AlvaradoInput {
+  migration_of_pain : Bool
+  anorexia : Bool
+  nausea_or_vomiting : Bool
+  right_lower_quadrant_tenderness : Bool
+  rebound_tenderness : Bool
+  fever_tenths_c : Int
+  leukocytosis : Bool
+  left_shift : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ApacheIiInput {
+  temperature_tenths_c : Int
+  mean_arterial_pressure : Int
+  heart_rate : Int
+  respiratory_rate : Int
+  oxygenation_value : Int
+  high_fio2 : Bool
+  arterial_ph_hundredths : Int
+  sodium : Int
+  potassium_tenths : Int
+  creatinine_hundredths : Int
+  acute_renal_failure : Bool
+  hematocrit_tenths : Int
+  white_cell_count_tenths : Int
+  gcs : Int
+  age : Int
+  chronic_health : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct AriscatInput {
+  age : Int
+  preoperative_oxygen_saturation : Int
+  respiratory_infection_last_month : Bool
+  preoperative_anemia : Bool
+  surgical_incision_site : Int
+  expected_duration_minutes : Int
+  emergency_surgery : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct AssessmentLedger {
+  snapshots : Array[ScoreSnapshot]
+  last_timestamp_minutes : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct AssessmentSummary {
+  snapshots : Int
+  instruments : Int
+  total_score : Int
+  highest : Severity
+  latest_timestamp_minutes : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct AuditEvent {
+  sequence : Int
+  event_type : String
+  instrument : String
+  score : Int
+  severity : Severity
+  timestamp_minutes : Int
+  source : String
+  note : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct BisapInput {
+  bun_mmol_l_tenths : Int
+  impaired_mentation : Bool
+  sirs_criteria : Int
+  age : Int
+  pleural_effusion : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct BishopInput {
+  dilation_cm : Int
+  effacement_percent : Int
+  fetal_station : Int
+  cervical_consistency : Int
+  cervical_position : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct BodeInput {
+  body_mass_index : Int
+  fev1_percent : Int
+  modified_mrc : Int
+  six_minute_walk_meters : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CanadianCspineInput {
+  age : Int
+  dangerous_mechanism : Bool
+  paresthesias : Bool
+  low_risk_simple_rear_end_collision : Bool
+  low_risk_sitting_in_ed : Bool
+  low_risk_ambulatory : Bool
+  low_risk_delayed_neck_pain : Bool
+  low_risk_no_midline_tenderness : Bool
+  rotates_neck_45_degrees : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CanadianCtHeadInput {
+  age : Int
+  gcs_less_than_15_at_two_hours : Bool
+  suspected_open_skull_fracture : Bool
+  signs_of_basal_skull_fracture : Bool
+  vomiting_episodes : Int
+  age_at_least_65 : Bool
+  retrograde_amnesia_minutes : Int
+  dangerous_mechanism : Bool
+  anticoagulant_or_antiplatelet : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CapriniInput {
+  age : Int
+  bmi_over_25 : Bool
+  swollen_legs : Bool
+  varicose_veins : Bool
+  pregnancy_or_postpartum : Bool
+  oral_contraceptives_or_hormone : Bool
+  sepsis : Bool
+  serious_lung_disease : Bool
+  abnormal_pulmonary_function : Bool
+  acute_myocardial_infarction : Bool
+  congestive_heart_failure : Bool
+  inflammatory_bowel_disease : Bool
+  medical_patient : Bool
+  minor_surgery : Bool
+  arthroscopic_surgery : Bool
+  major_surgery : Bool
+  laparoscopic_surgery_over_45_min : Bool
+  malignancy : Bool
+  bed_rest_over_72_hours : Bool
+  prior_vte : Bool
+  family_history_vte : Bool
+  thrombophilia : Bool
+  stroke : Bool
+  elective_arthroplasty : Bool
+  hip_pelvis_leg_fracture : Bool
+  acute_spinal_cord_injury : Bool
+} derive(Eq, @debug.Debug)
+
 pub(all) struct Cha2ds2VascInput {
   congestive_failure : Bool
   hypertension : Bool
@@ -231,6 +1146,37 @@ pub(all) struct Cha2ds2VascInput {
   stroke_or_tia : Bool
   vascular_disease : Bool
   sex_female : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CharlsonInput {
+  age : Int
+  myocardial_infarction : Bool
+  congestive_heart_failure : Bool
+  peripheral_vascular_disease : Bool
+  cerebrovascular_disease : Bool
+  dementia : Bool
+  chronic_pulmonary_disease : Bool
+  connective_tissue_disease : Bool
+  peptic_ulcer_disease : Bool
+  mild_liver_disease : Bool
+  diabetes_without_complication : Bool
+  diabetes_with_end_organ_damage : Bool
+  hemiplegia : Bool
+  moderate_or_severe_renal_disease : Bool
+  any_tumor : Bool
+  leukemia : Bool
+  lymphoma : Bool
+  moderate_or_severe_liver_disease : Bool
+  metastatic_solid_tumor : Bool
+  aids : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ChildPughInput {
+  bilirubin_tenths_mg_dl : Int
+  albumin_tenths_g_dl : Int
+  inr_hundredths : Int
+  ascites_grade : Int
+  encephalopathy_grade : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) enum Consciousness {
@@ -250,10 +1196,31 @@ pub(all) struct Curbs65Input {
   age : Int
 } derive(Eq, @debug.Debug)
 
+pub(all) enum EscalationTier {
+  Routine
+  Review
+  Urgent
+  Immediate
+} derive(Eq, @debug.Debug)
+
+pub(all) enum EvidenceStatus {
+  EvidenceComplete
+  EvidencePartial
+  EvidenceMissing
+  EvidenceInvalid
+} derive(Eq, @debug.Debug)
+
 pub(all) struct Explanation {
   label : String
   points : Int
   detail : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct FourScoreInput {
+  eye_response : Int
+  motor_response : Int
+  brainstem_reflexes : Int
+  respiration : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) struct GcsInput {
@@ -272,6 +1239,29 @@ pub(all) struct GcsReport {
   disclaimer : String
 } derive(Eq, @debug.Debug)
 
+pub(all) struct GlasgowBlatchfordInput {
+  bun_mmol_l_tenths : Int
+  hemoglobin_g_dl_tenths : Int
+  female : Bool
+  systolic_bp : Int
+  pulse : Int
+  melena : Bool
+  syncope : Bool
+  hepatic_disease : Bool
+  cardiac_failure : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct HasBledInput {
+  hypertension : Bool
+  abnormal_renal : Bool
+  abnormal_liver : Bool
+  stroke : Bool
+  bleeding_history : Bool
+  labile_inr : Bool
+  age_over_65 : Bool
+  drugs_or_alcohol : Bool
+} derive(Eq, @debug.Debug)
+
 pub(all) struct HeartInput {
   history : Int
   ecg : Int
@@ -280,11 +1270,84 @@ pub(all) struct HeartInput {
   troponin : Int
 } derive(Eq, @debug.Debug)
 
+pub(all) struct HestiaInput {
+  unstable : Bool
+  oxygen_saturation_low : Bool
+  active_bleeding : Bool
+  need_thrombolysis : Bool
+  severe_renal_impairment : Bool
+  severe_liver_impairment : Bool
+  social_barrier : Bool
+  pregnancy : Bool
+  history_bleeding : Bool
+  treatment_failure : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct InjurySeverityInput {
+  head_neck : Int
+  face : Int
+  chest : Int
+  abdomen : Int
+  extremity : Int
+  external : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) enum InstrumentCategory {
+  EarlyWarning
+  Cardiorespiratory
+  Neurology
+  Trauma
+  Gastrointestinal
+  RenalHepatic
+  Perioperative
+  ObstetricPediatric
+  Workflow
+} derive(Eq, @debug.Debug)
+
+pub(all) struct InstrumentMetadata {
+  id : String
+  display_name : String
+  category : InstrumentCategory
+  unit : String
+  minimum : Int
+  maximum : Int
+  source_url : String
+  version : String
+  caution : String
+  keywords : Array[String]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct InstrumentRegistry {
+  entries : Array[InstrumentMetadata]
+  revision : String
+} derive(Eq, @debug.Debug)
+
 pub(all) enum MeasurementQuality {
   Complete
   Missing
   OutOfRange
   Suspicious
+} derive(Eq, @debug.Debug)
+
+pub(all) enum MeasurementUnit {
+  BeatsPerMinute
+  BreathsPerMinute
+  MillimetersMercury
+  Percent
+  CelsiusTenths
+  MilligramsPerDeciliter
+  MillimolesPerLiter
+  MicromolesPerLiter
+  ScorePoints
+  Unknown
+} derive(Eq, @debug.Debug)
+
+pub(all) struct MeldNaInput {
+  bilirubin_tenths_mg_dl : Int
+  inr_hundredths : Int
+  creatinine_tenths_mg_dl : Int
+  sodium : Int
+  dialysis_twice_last_week : Bool
 } derive(Eq, @debug.Debug)
 
 pub(all) struct MewsInput {
@@ -304,6 +1367,151 @@ pub(all) struct News2Input {
   systolic_bp : Int
   heart_rate : Int
   consciousness : Consciousness
+} derive(Eq, @debug.Debug)
+
+pub(all) struct NexusCspineInput {
+  posterior_midline_tenderness : Bool
+  focal_neurologic_deficit : Bool
+  altered_alertness : Bool
+  intoxication : Bool
+  painful_distracting_injury : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct NihssInput {
+  consciousness : Int
+  questions : Int
+  commands : Int
+  gaze : Int
+  visual : Int
+  facial : Int
+  left_arm : Int
+  right_arm : Int
+  left_leg : Int
+  right_leg : Int
+  ataxia : Int
+  sensory : Int
+  language : Int
+  dysarthria : Int
+  neglect : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Observation {
+  kind : ObservationKind
+  value : Int
+  unit : MeasurementUnit
+  timestamp_minutes : Int
+  source : String
+} derive(Eq, @debug.Debug)
+
+pub(all) enum ObservationIssue {
+  NegativeTimestamp
+  EmptySource
+  UnitMismatch
+  NonFiniteRange
+} derive(Eq, @debug.Debug)
+
+pub(all) enum ObservationKind {
+  HeartRate
+  RespiratoryRate
+  SystolicBloodPressure
+  DiastolicBloodPressure
+  OxygenSaturation
+  Temperature
+  GlasgowComaScale
+  WhiteCellCount
+  PlateletCount
+  Bilirubin
+  Creatinine
+  Custom
+} derive(Eq, @debug.Debug)
+
+pub(all) struct OttawaAnkleInput {
+  posterior_edge_lateral_malleolus_tender : Bool
+  posterior_edge_medial_malleolus_tender : Bool
+  base_of_fifth_metatarsal_tender : Bool
+  navicular_tender : Bool
+  unable_to_bear_four_steps : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PaduaInput {
+  active_cancer : Bool
+  previous_vte : Bool
+  reduced_mobility : Bool
+  known_thrombophilia : Bool
+  recent_trauma_or_surgery : Bool
+  elderly_age : Bool
+  heart_or_respiratory_failure : Bool
+  acute_mi_or_stroke : Bool
+  acute_infection_or_rheumatologic : Bool
+  bmi_over_30 : Bool
+  ongoing_hormonal_treatment : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PathwayDecision {
+  tier : EscalationTier
+  evidence : EvidenceStatus
+  matched_rules : Array[String]
+  missing_instruments : Array[String]
+  highest_severity : Severity
+  score_count : Int
+  explanation : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PathwayRule {
+  code : String
+  title : String
+  tier : EscalationTier
+  required_instruments : Array[String]
+  minimum_severity : Severity
+  rationale : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PecarnHeadInput {
+  age_under_two : Bool
+  altered_mentation : Bool
+  palpable_skull_fracture : Bool
+  nonfrontal_scalp_hematoma : Bool
+  loss_of_consciousness_minutes : Int
+  severe_mechanism : Bool
+  not_behaving_normally : Bool
+  signs_of_basilar_skull_fracture : Bool
+  severe_headache : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PediatricAppendicitisInput {
+  migration_of_pain : Bool
+  anorexia : Bool
+  nausea_or_vomiting : Bool
+  right_lower_quadrant_tenderness : Bool
+  cough_hopping_percussion_pain : Bool
+  fever_tenths_c : Int
+  leukocytosis : Bool
+  neutrophilia : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PercInput {
+  age : Int
+  heart_rate : Int
+  oxygen_saturation : Int
+  hemoptysis : Bool
+  estrogen_use : Bool
+  prior_vte : Bool
+  recent_surgery_or_trauma : Bool
+  unilateral_leg_swelling : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PesiInput {
+  age : Int
+  male : Bool
+  nursing_home : Bool
+  cancer : Bool
+  heart_failure : Bool
+  chronic_lung_disease : Bool
+  heart_rate : Int
+  systolic_bp : Int
+  temperature_tenths_c : Int
+  altered_mentation : Bool
+  oxygen_saturation : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) enum PewsBehavior {
@@ -339,6 +1547,26 @@ pub(all) enum PewsRespiratory {
   SevereDistress
 } derive(Eq, @debug.Debug)
 
+pub(all) struct PreeclampsiaInput {
+  systolic_bp : Int
+  diastolic_bp : Int
+  platelets_thousands : Int
+  creatinine_hundredths_mg_dl : Int
+  ast_units : Int
+  alt_units : Int
+  pulmonary_edema : Bool
+  persistent_headache : Bool
+  visual_symptoms : Bool
+  right_upper_quadrant_pain : Bool
+  fetal_growth_restriction : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct QcsiInput {
+  respiratory_rate : Int
+  oxygen_saturation : Int
+  oxygen_flow_liters : Int
+} derive(Eq, @debug.Debug)
+
 pub(all) struct QsofaInput {
   respiratory_rate : Int
   systolic_bp : Int
@@ -359,6 +1587,61 @@ pub(all) struct QualitySummary {
   suspicious : Int
 } derive(Eq, @debug.Debug)
 
+pub(all) struct RansonInput {
+  age : Int
+  wbc_tenths : Int
+  glucose_mg_dl : Int
+  ldh_units : Int
+  ast_units : Int
+  hematocrit_drop_tenths : Int
+  bun_rise_mg_dl : Int
+  calcium_mg_dl_tenths : Int
+  arterial_oxygen_mmhg : Int
+  base_deficit : Int
+  fluid_sequestration_liters : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct RcriInput {
+  high_risk_surgery : Bool
+  ischemic_heart_disease : Bool
+  heart_failure : Bool
+  cerebrovascular_disease : Bool
+  diabetes_on_insulin : Bool
+  creatinine_above_2 : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct RegistryChange {
+  id : String
+  kind : RegistryChangeKind
+  before_version : String
+  after_version : String
+  detail : String
+} derive(Eq, @debug.Debug)
+
+pub(all) enum RegistryChangeKind {
+  Added
+  Removed
+  Updated
+  Unchanged
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ReportComparison {
+  left_instrument : String
+  right_instrument : String
+  left_score : Int
+  right_score : Int
+  left_more_concerning : Bool
+  score_delta : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ReportQuality {
+  total : Int
+  nonempty : Int
+  reconciled : Int
+  coherent : Bool
+  disclaimer_count : Int
+} derive(Eq, @debug.Debug)
+
 pub(all) struct ReportSummary {
   count : Int
   total_score : Int
@@ -369,10 +1652,25 @@ pub(all) struct ReportSummary {
   critical_count : Int
 } derive(Eq, @debug.Debug)
 
+pub(all) struct RevisedTraumaInput {
+  gcs_total : Int
+  systolic_bp : Int
+  respiratory_rate : Int
+} derive(Eq, @debug.Debug)
+
 pub(all) struct RoxInput {
   oxygen_saturation : Int
   fio2_percent : Int
   respiratory_rate : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct RuleEvaluation {
+  rule_name : String
+  value : Int
+  matched : Bool
+  points : Int
+  band : String
+  explanation : String
 } derive(Eq, @debug.Debug)
 
 pub(all) struct ScoreReport {
@@ -382,6 +1680,14 @@ pub(all) struct ScoreReport {
   interpretation : String
   explanations : Array[Explanation]
   disclaimer : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ScoreSnapshot {
+  instrument : String
+  score : Int
+  severity : Severity
+  timestamp_minutes : Int
+  source : String
 } derive(Eq, @debug.Debug)
 
 pub(all) enum Severity {
@@ -404,6 +1710,24 @@ pub(all) struct SirsInput {
   immature_neutrophils_percent : Int
 } derive(Eq, @debug.Debug)
 
+pub(all) struct SmartCopInput {
+  systolic_bp : Int
+  multilobar_infiltrates : Bool
+  albumin_tenths_g_dl : Int
+  respiratory_rate : Int
+  age : Int
+  confusion : Bool
+  oxygen_saturation : Int
+  arterial_ph_hundredths : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) enum SnapshotChange {
+  Increased(Int)
+  Decreased(Int)
+  Unchanged
+  InstrumentChanged
+} derive(Eq, @debug.Debug)
+
 pub(all) struct SofaInput {
   pao2_fio2 : Int
   respiratory_support : Bool
@@ -419,6 +1743,69 @@ pub(all) struct SofaInput {
 pub(all) enum Spo2Scale {
   Scale1
   Scale2
+} derive(Eq, @debug.Debug)
+
+pub(all) struct StopBangInput {
+  snoring : Bool
+  tiredness : Bool
+  observed_apnea : Bool
+  hypertension : Bool
+  bmi_over_35 : Bool
+  age_over_50 : Bool
+  neck_circumference_over_40_cm : Bool
+  male : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ThresholdBand {
+  label : String
+  minimum : Int
+  maximum : Int
+  points : Int
+  explanation : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Timeline {
+  observations : Array[Observation]
+  last_timestamp_minutes : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TimelineSummary {
+  observations : Int
+  distinct_kinds : Int
+  invalid_observations : Int
+  earliest_timestamp : Int
+  latest_timestamp : Int
+  span_minutes : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TimiInput {
+  age_65_or_more : Bool
+  risk_factors : Int
+  known_coronary_stenosis : Bool
+  aspirin_last_7_days : Bool
+  severe_angina : Bool
+  st_deviation : Bool
+  positive_biomarker : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TraceSummary {
+  event_count : Int
+  unique_instruments : Int
+  first_timestamp : Int?
+  last_timestamp : Int?
+  invalid_event_count : Int
+  source_labels : Array[String]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Trend {
+  kind : ObservationKind
+  first_value : Int
+  latest_value : Int
+  delta : Int
+  samples : Int
+  rising : Bool
+  falling : Bool
+  stable : Bool
 } derive(Eq, @debug.Debug)
 
 pub(all) struct TriageBundle {
@@ -446,6 +1833,17 @@ pub(all) enum VasopressorLevel {
   DopamineHigh
   NorepinephrineLow
   NorepinephrineHigh
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WellsDvtInput {
+  active_cancer : Bool
+  paralysis_or_immobilization : Bool
+  bedridden_or_surgery : Bool
+  tenderness_deep_veins : Bool
+  entire_leg_swollen : Bool
+  calf_swelling : Bool
+  previous_dvt : Bool
+  alternative_diagnosis : Bool
 } derive(Eq, @debug.Debug)
 
 pub(all) struct WellsPeInput {

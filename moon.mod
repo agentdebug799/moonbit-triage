@@ -11,7 +11,7 @@
 
 name = "agentdebug799/moonbit-triage"
 
-version = "0.3.0"
+version = "0.4.0"
 
 readme = "README.mbt.md"
 
@@ -28,6 +28,9 @@ keywords = [
   "HEART",
   "Wells",
   "clinical-score",
+  "audit",
+  "observability",
+  "risk-stratification",
 ]
 
 preferred_target = "wasm-gc"
