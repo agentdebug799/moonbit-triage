@@ -10,6 +10,8 @@
   run of 2,349/3,354 instrumented lines (70.0%).
 - Added provenance entries for the new public scoring families and their
   implementation scope.
+- Updated GitHub Actions checkout steps to the current Node 24-compatible
+  checkout action major version.
 
 ## 0.1.0
 
