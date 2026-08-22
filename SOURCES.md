@@ -8,6 +8,9 @@ MoonBit package with the same emergency-score scope was found.
 
 ## Scoring Sources
 
+Detailed links, scope, and non-claims are maintained in
+[PROVENANCE.md](PROVENANCE.md).
+
 - NEWS2: public NEWS2 scoring tables as commonly published by clinical early
   warning score materials.
 - qSOFA: public qSOFA description: respiratory rate >= 22/min, systolic blood

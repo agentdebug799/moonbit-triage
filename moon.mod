@@ -11,7 +11,7 @@
 
 name = "agentdebug799/moonbit-triage"
 
-version = "0.2.0"
+version = "0.3.0"
 
 readme = "README.mbt.md"
 
@@ -19,7 +19,16 @@ repository = "https://github.com/agentdebug799/moonbit-triage"
 
 license = "Apache-2.0"
 
-keywords = [ "triage", "NEWS2", "qSOFA", "GCS", "clinical-score" ]
+keywords = [
+  "triage",
+  "NEWS2",
+  "qSOFA",
+  "GCS",
+  "SOFA",
+  "HEART",
+  "Wells",
+  "clinical-score",
+]
 
 preferred_target = "wasm-gc"
 

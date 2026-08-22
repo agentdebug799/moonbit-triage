@@ -10,9 +10,12 @@
 - Added black-box tests, boundary tests, README examples, CI, and generated API
   summaries.
 
-## Unreleased
+## 0.3.0
 
 - Added SIRS, MEWS, SOFA, PEWS, CURB-65, Shock Index, and ROX Index APIs.
 - Added deterministic batch summaries and measurement-quality flags.
 - Added a 10,000-iteration executable benchmark and native/all-target CI.
 - Added a manual/tagged Mooncakes publication workflow.
+- Added Wells PE, HEART, and CHA2DS2-VASc weighted-rule APIs.
+- Added a dedicated provenance document with primary reference links and
+  explicit implementation scope.

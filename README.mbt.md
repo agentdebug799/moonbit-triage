@@ -6,8 +6,8 @@ pipelines, and prototype integrations. It returns component contributions and
 structured range errors so a caller can inspect exactly how a result was made.
 
 The library computes NEWS2, qSOFA, GCS, SIRS, MEWS, SOFA, PEWS, CURB-65, Shock
-Index, and ROX Index. It also provides combined reports, batch summaries, and
-measurement-quality flags.
+Index, ROX Index, Wells PE, HEART, and CHA2DS2-VASc. It also provides combined
+reports, batch summaries, and measurement-quality flags.
 
 ## Core capabilities
 
@@ -90,6 +90,9 @@ against their intended policy before use.
 
 This project is for education, audit, and software validation. It is not a
 medical device and must not replace clinician judgment.
+
+Rule provenance, primary reference links, implementation scope, and explicit
+non-claims are documented in [PROVENANCE.md](PROVENANCE.md).
 
 Every score is a rule implementation, not a diagnosis. This package must not
 be used as a substitute for clinician judgment, local policy, or a regulated

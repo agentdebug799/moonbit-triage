@@ -6,6 +6,14 @@ import {
 }
 
 // Values
+pub fn cha2ds2_vasc_age_points(Int) -> Int
+
+pub fn cha2ds2_vasc_flag_points(Bool) -> Int
+
+pub fn cha2ds2_vasc_severity(Int) -> Severity
+
+pub fn cha2ds2_vasc_stroke_points(Bool) -> Int
+
 pub fn clamp(Int, Int, Int) -> Int
 
 pub fn curbs65_age_points(Int) -> Int
@@ -25,6 +33,8 @@ pub fn explanation(String, Int, String) -> Explanation
 pub fn gcs_severity(Int) -> Severity
 
 pub fn gcs_total(GcsInput) -> Int
+
+pub fn heart_severity(Int) -> Severity
 
 pub fn mews_consciousness_points(Consciousness) -> Int
 
@@ -92,11 +102,15 @@ pub fn rox_severity(Int) -> Severity
 
 pub fn rox_x100(RoxInput) -> Int
 
+pub fn score_cha2ds2_vasc(Cha2ds2VascInput) -> ScoreReport
+
 pub fn score_curbs65(Curbs65Input) -> ScoreReport
 
 pub fn score_gcs(GcsInput) -> GcsReport
 
 pub fn score_gcs_as_report(GcsInput) -> ScoreReport
+
+pub fn score_heart(HeartInput) -> ScoreReport
 
 pub fn score_mews(MewsInput) -> ScoreReport
 
@@ -115,6 +129,8 @@ pub fn score_sirs(SirsInput) -> ScoreReport
 pub fn score_sofa(SofaInput) -> ScoreReport
 
 pub fn score_triage(TriageInput) -> TriageBundle
+
+pub fn score_wells_pe(WellsPeInput) -> ScoreReport
 
 pub fn severity_label(Severity) -> String
 
@@ -154,9 +170,13 @@ pub fn triage_disclaimer() -> String
 
 pub fn validate_bool_scale(String, Int) -> ValidationError?
 
+pub fn validate_cha2ds2_vasc(Cha2ds2VascInput) -> ValidationError?
+
 pub fn validate_curbs65(Curbs65Input) -> ValidationError?
 
 pub fn validate_gcs(GcsInput) -> ValidationError?
+
+pub fn validate_heart(HeartInput) -> ValidationError?
 
 pub fn validate_mews(MewsInput) -> ValidationError?
 
@@ -178,13 +198,41 @@ pub fn validate_sofa(SofaInput) -> ValidationError?
 
 pub fn validate_triage(TriageInput) -> ValidationError?
 
+pub fn validate_wells_pe(WellsPeInput) -> ValidationError?
+
 pub fn validation_error_field(ValidationError) -> String
 
 pub fn validation_error_message(ValidationError) -> String
 
+pub fn wells_pe_dvt_points(Bool) -> Int
+
+pub fn wells_pe_hemoptysis_points(Bool) -> Int
+
+pub fn wells_pe_immobilization_points(Bool) -> Int
+
+pub fn wells_pe_likely_points(Bool) -> Int
+
+pub fn wells_pe_malignancy_points(Bool) -> Int
+
+pub fn wells_pe_previous_event_points(Bool) -> Int
+
+pub fn wells_pe_rate_points(Int) -> Int
+
+pub fn wells_pe_severity(Int) -> Severity
+
 // Errors
 
 // Types and methods
+pub(all) struct Cha2ds2VascInput {
+  congestive_failure : Bool
+  hypertension : Bool
+  age : Int
+  diabetes : Bool
+  stroke_or_tia : Bool
+  vascular_disease : Bool
+  sex_female : Bool
+} derive(Eq, @debug.Debug)
+
 pub(all) enum Consciousness {
   Alert
   NewConfusion
@@ -222,6 +270,14 @@ pub(all) struct GcsReport {
   severity : Severity
   explanations : Array[Explanation]
   disclaimer : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct HeartInput {
+  history : Int
+  ecg : Int
+  age : Int
+  risk_factors : Int
+  troponin : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) enum MeasurementQuality {
@@ -390,6 +446,16 @@ pub(all) enum VasopressorLevel {
   DopamineHigh
   NorepinephrineLow
   NorepinephrineHigh
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WellsPeInput {
+  clinical_dvt_signs : Bool
+  pe_most_likely : Bool
+  heart_rate : Int
+  surgery_or_immobilization : Bool
+  previous_dvt_or_pe : Bool
+  hemoptysis : Bool
+  malignancy : Bool
 } derive(Eq, @debug.Debug)
 
 // Type aliases
