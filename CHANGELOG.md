@@ -9,3 +9,10 @@
 - Added runnable CLI example.
 - Added black-box tests, boundary tests, README examples, CI, and generated API
   summaries.
+
+## Unreleased
+
+- Added SIRS, MEWS, SOFA, PEWS, CURB-65, Shock Index, and ROX Index APIs.
+- Added deterministic batch summaries and measurement-quality flags.
+- Added a 10,000-iteration executable benchmark and native/all-target CI.
+- Added a manual/tagged Mooncakes publication workflow.

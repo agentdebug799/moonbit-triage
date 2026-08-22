@@ -1,0 +1,5 @@
+import {
+  "agentdebug799/moonbit-triage",
+}
+
+pkgtype(kind: "executable")

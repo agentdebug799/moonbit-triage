@@ -40,7 +40,7 @@ jobs:
         run: moon fmt --check
 
       - name: Static check
-        run: moon check --deny-warn
+        run: moon check --target all --deny-warn
 
       - name: Public API info
         run: |
@@ -48,4 +48,35 @@ jobs:
           git diff --exit-code
 
       - name: Tests
-        run: moon test --deny-warn
+        run: moon test --target all --deny-warn
+
+      - name: Build wasm-gc
+        run: moon build --target wasm-gc
+
+      - name: Run CLI example
+        run: moon run cmd/main
+
+  native:
+    name: Native checks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install native build dependencies
+        run: sudo apt-get update && sudo apt-get install -y gcc
+
+      - name: Setup MoonBit
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+
+      - name: Native check and test
+        run: |
+          moon version --all
+          moon check --target native --deny-warn
+          moon test --target native --deny-warn

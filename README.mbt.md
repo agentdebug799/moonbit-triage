@@ -1,23 +1,25 @@
 # moonbit-triage
 
-Explainable emergency triage scoring primitives for MoonBit.
+`moonbit-triage` is a dependency-free MoonBit library for explainable, auditable
+clinical score computation in education, software validation, data-quality
+pipelines, and prototype integrations. It returns component contributions and
+structured range errors so a caller can inspect exactly how a result was made.
 
-`moonbit-triage` implements small, auditable scoring functions for emergency
-triage and risk-score software. It currently covers NEWS2, qSOFA, and Glasgow
-Coma Scale. The package computes public scoring rules, returns component-level
-explanations, and validates common input ranges. It does not diagnose disease,
-recommend treatment, or decide patient disposition.
+The library computes NEWS2, qSOFA, GCS, SIRS, MEWS, SOFA, PEWS, CURB-65, Shock
+Index, and ROX Index. It also provides combined reports, batch summaries, and
+measurement-quality flags.
 
-## Scope
+## Core capabilities
 
-- NEWS2 total score with SpO2 scale 1/2, oxygen add-on, vital-sign bands, and
-  ACVPU consciousness scoring.
-- qSOFA score from respiratory rate, systolic blood pressure, and GCS total.
-- Glasgow Coma Scale component total with eye, verbal, and motor explanations.
-- A combined triage bundle that preserves the individual score reports.
-- First-error validation helpers for measured ranges.
+- Typed inputs with explicit inclusive threshold functions.
+- Component-level explanations and stable severity bands.
+- First-error validation for common measurement ranges.
+- Integer-scaled ratio APIs (`Shock Index x100`, `ROX Index x100`) for portable,
+  deterministic results across MoonBit targets.
+- Batch summaries and quality flags for form or data-pipeline integration.
+- No external runtime dependencies; `wasm-gc` is the preferred target.
 
-## Install And Run
+## Quick start
 
 ```bash
 moon check
@@ -25,17 +27,21 @@ moon test
 moon run cmd/main
 ```
 
-The sample command prints a small combined assessment:
+The runnable CLI prints a combined NEWS2/qSOFA/GCS assessment and its summary.
+For a deterministic workload used by the benchmark section, run:
 
-```text
-moonbit-triage sample
-NEWS2: 8
-qSOFA: 1
-GCS: 15
-Summary: At least one score is in its highest concern band. Use local escalation policy and clinical judgment.
+```bash
+moon run cmd/benchmark
 ```
 
-## Minimal Example
+## CLI
+
+The example CLI is intentionally small and demonstrates the public API rather
+than acting as a clinical decision system. Applications can construct records,
+call `score_*`, inspect `ScoreReport.explanations`, and route validation errors
+through their own forms or service boundaries.
+
+## Minimal example
 
 ```mbt check
 ///|
@@ -55,7 +61,7 @@ test "README NEWS2 example" {
 }
 ```
 
-## API Shape
+## Architecture and API shape
 
 The public API intentionally uses plain records and enums so that callers can
 wire the library into CLI tools, web forms, or data-validation pipelines without
@@ -68,7 +74,12 @@ extra dependencies. Each `ScoreReport` includes:
 - `explanations`: component-level point contributions.
 - `disclaimer`: safety boundary text.
 
-## Sources And Safety
+The root package owns the public data types and scoring facade. Focused files
+contain each instrument; `quality.mbt` handles measurement metadata and
+`batch.mbt` handles deterministic aggregation. The generated
+`pkg.generated.mbti` is checked in as a compact public API review surface.
+
+## Sources and safety
 
 The implementation follows publicly described scoring thresholds for NEWS2,
 qSOFA, and GCS. The qSOFA criteria are also summarized by the public qSOFA
@@ -80,10 +91,43 @@ against their intended policy before use.
 This project is for education, audit, and software validation. It is not a
 medical device and must not replace clinician judgment.
 
-## Development Notes
+Every score is a rule implementation, not a diagnosis. This package must not
+be used as a substitute for clinician judgment, local policy, or a regulated
+medical-device workflow. Downstream users are responsible for validating the
+chosen thresholds, patient population, units, and escalation policy.
+
+## Benchmarks
+
+The checked-in benchmark runs 10,000 NEWS2 calculations and prints a checksum
+and count, making correctness and workload size reproducible without claiming
+hardware-independent latency. On the maintainer workstation with MoonBit
+`0.1.20260807`, the command produced:
+
+```text
+iterations=10000
+checksum=54000
+critical_reports=4500
+```
+
+Measure wall-clock time locally with PowerShell (`Measure-Command { moon run
+cmd/benchmark }`) or `/usr/bin/time` on Unix; report the machine and toolchain
+when comparing runs.
+
+## Tests and CI
+
+The test suite covers threshold transitions, invalid ranges, aggregate scores,
+quality flags, and deterministic summaries. GitHub Actions runs formatting,
+all-target checks, public API generation, wasm-gc tests, native tests, and a
+coverage summary on Linux, macOS, and Windows.
+
+## Development notes
 
 - MoonBit module: `agentdebug799/moonbit-triage`.
 - License: Apache-2.0.
 - Preferred target: `wasm-gc`.
 - Validation used for release: `moon fmt --check`, `moon check --deny-warn`,
-  `moon info`, and `moon test --deny-warn`.
+  `moon info`, `moon test --deny-warn`, and the benchmark command.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).

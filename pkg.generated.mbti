@@ -8,11 +8,35 @@ import {
 // Values
 pub fn clamp(Int, Int, Int) -> Int
 
+pub fn curbs65_age_points(Int) -> Int
+
+pub fn curbs65_confusion_points(Bool) -> Int
+
+pub fn curbs65_pressure_points(Int, Int) -> Int
+
+pub fn curbs65_respiratory_points(Int) -> Int
+
+pub fn curbs65_severity(Int) -> Severity
+
+pub fn curbs65_urea_points(Int) -> Int
+
 pub fn explanation(String, Int, String) -> Explanation
 
 pub fn gcs_severity(Int) -> Severity
 
 pub fn gcs_total(GcsInput) -> Int
+
+pub fn mews_consciousness_points(Consciousness) -> Int
+
+pub fn mews_heart_rate_points(Int) -> Int
+
+pub fn mews_respiratory_rate_points(Int) -> Int
+
+pub fn mews_severity(Int) -> Severity
+
+pub fn mews_systolic_bp_points(Int) -> Int
+
+pub fn mews_temperature_points(Int) -> Int
 
 pub fn news2_consciousness_points(Consciousness) -> Int
 
@@ -30,6 +54,18 @@ pub fn news2_systolic_bp_points(Int) -> Int
 
 pub fn news2_temperature_points(Int) -> Int
 
+pub fn pews_behavior_points(PewsBehavior) -> Int
+
+pub fn pews_cardiovascular_points(PewsCardiovascular) -> Int
+
+pub fn pews_nebulizer_points(Int) -> Int
+
+pub fn pews_oxygen_points(PewsOxygenSupport) -> Int
+
+pub fn pews_respiratory_points(PewsRespiratory) -> Int
+
+pub fn pews_severity(Int) -> Severity
+
 pub fn qsofa_mentation_points(Int) -> Int
 
 pub fn qsofa_respiratory_rate_points(Int) -> Int
@@ -38,31 +74,107 @@ pub fn qsofa_severity(Int) -> Severity
 
 pub fn qsofa_systolic_bp_points(Int) -> Int
 
+pub fn quality_flag(String, MeasurementQuality, String) -> QualityFlag
+
+pub fn quality_for_int(String, Int, Int, Int) -> QualityFlag
+
+pub fn quality_for_news2(News2Input) -> Array[QualityFlag]
+
+pub fn quality_for_optional(String, Int?) -> QualityFlag
+
+pub fn quality_is_usable(QualityFlag) -> Bool
+
+pub fn quality_label(MeasurementQuality) -> String
+
 pub fn report(String, Int, Severity, String, Array[Explanation]) -> ScoreReport
+
+pub fn rox_severity(Int) -> Severity
+
+pub fn rox_x100(RoxInput) -> Int
+
+pub fn score_curbs65(Curbs65Input) -> ScoreReport
 
 pub fn score_gcs(GcsInput) -> GcsReport
 
 pub fn score_gcs_as_report(GcsInput) -> ScoreReport
 
+pub fn score_mews(MewsInput) -> ScoreReport
+
 pub fn score_news2(News2Input) -> ScoreReport
 
+pub fn score_pews(PewsInput) -> ScoreReport
+
 pub fn score_qsofa(QsofaInput) -> ScoreReport
+
+pub fn score_rox(RoxInput) -> ScoreReport
+
+pub fn score_shock_index(ShockIndexInput) -> ScoreReport
+
+pub fn score_sirs(SirsInput) -> ScoreReport
+
+pub fn score_sofa(SofaInput) -> ScoreReport
 
 pub fn score_triage(TriageInput) -> TriageBundle
 
 pub fn severity_label(Severity) -> String
 
+pub fn shock_index_severity(Int) -> Severity
+
+pub fn shock_index_x100(ShockIndexInput) -> Int
+
+pub fn sirs_heart_rate_points(Int) -> Int
+
+pub fn sirs_respiratory_rate_points(Int) -> Int
+
+pub fn sirs_severity(Int) -> Severity
+
+pub fn sirs_temperature_points(Int) -> Int
+
+pub fn sirs_white_cell_points(Int, Int) -> Int
+
+pub fn sofa_bilirubin_points(Int) -> Int
+
+pub fn sofa_circulation_points(Int, VasopressorLevel) -> Int
+
+pub fn sofa_gcs_points(Int) -> Int
+
+pub fn sofa_platelet_points(Int) -> Int
+
+pub fn sofa_renal_points(Int, Int) -> Int
+
+pub fn sofa_respiratory_points(Int, Bool) -> Int
+
+pub fn sofa_severity(Int) -> Severity
+
+pub fn summarize_quality(Array[QualityFlag]) -> QualitySummary
+
+pub fn summarize_reports(Array[ScoreReport]) -> ReportSummary
+
 pub fn triage_disclaimer() -> String
 
 pub fn validate_bool_scale(String, Int) -> ValidationError?
 
+pub fn validate_curbs65(Curbs65Input) -> ValidationError?
+
 pub fn validate_gcs(GcsInput) -> ValidationError?
 
+pub fn validate_mews(MewsInput) -> ValidationError?
+
 pub fn validate_news2(News2Input) -> ValidationError?
+
+pub fn validate_pews(PewsInput) -> ValidationError?
 
 pub fn validate_qsofa(QsofaInput) -> ValidationError?
 
 pub fn validate_range(String, Int, Int, Int) -> ValidationError?
+
+pub fn validate_rox(RoxInput) -> ValidationError?
+
+pub fn validate_shock_index(ShockIndexInput) -> ValidationError?
+
+pub fn validate_sirs(SirsInput) -> ValidationError?
+
+pub fn validate_sofa(SofaInput) -> ValidationError?
 
 pub fn validate_triage(TriageInput) -> ValidationError?
 
@@ -79,6 +191,15 @@ pub(all) enum Consciousness {
   Voice
   Pain
   Unresponsive
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Curbs65Input {
+  confusion : Bool
+  urea_mmol : Int
+  respiratory_rate : Int
+  systolic_bp : Int
+  diastolic_bp : Int
+  age : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) struct Explanation {
@@ -103,6 +224,21 @@ pub(all) struct GcsReport {
   disclaimer : String
 } derive(Eq, @debug.Debug)
 
+pub(all) enum MeasurementQuality {
+  Complete
+  Missing
+  OutOfRange
+  Suspicious
+} derive(Eq, @debug.Debug)
+
+pub(all) struct MewsInput {
+  systolic_bp : Int
+  heart_rate : Int
+  respiratory_rate : Int
+  temperature_tenths_c : Int
+  consciousness : Consciousness
+} derive(Eq, @debug.Debug)
+
 pub(all) struct News2Input {
   respiratory_rate : Int
   oxygen_saturation : Int
@@ -114,10 +250,73 @@ pub(all) struct News2Input {
   consciousness : Consciousness
 } derive(Eq, @debug.Debug)
 
+pub(all) enum PewsBehavior {
+  Playing
+  Sleeping
+  Irritable
+  Lethargic
+} derive(Eq, @debug.Debug)
+
+pub(all) enum PewsCardiovascular {
+  Normal
+  Tachycardic
+  PoorPerfusion
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PewsInput {
+  behavior : PewsBehavior
+  cardiovascular : PewsCardiovascular
+  respiratory : PewsRespiratory
+  oxygen_support : PewsOxygenSupport
+  nebulizer_count : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) enum PewsOxygenSupport {
+  RoomAir
+  LowFlow
+  HighFlow
+} derive(Eq, @debug.Debug)
+
+pub(all) enum PewsRespiratory {
+  Normal
+  ModerateDistress
+  SevereDistress
+} derive(Eq, @debug.Debug)
+
 pub(all) struct QsofaInput {
   respiratory_rate : Int
   systolic_bp : Int
   gcs_total : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct QualityFlag {
+  field : String
+  quality : MeasurementQuality
+  message : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct QualitySummary {
+  total : Int
+  complete : Int
+  missing : Int
+  out_of_range : Int
+  suspicious : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ReportSummary {
+  count : Int
+  total_score : Int
+  highest : Severity
+  low_count : Int
+  medium_count : Int
+  high_count : Int
+  critical_count : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct RoxInput {
+  oxygen_saturation : Int
+  fio2_percent : Int
+  respiratory_rate : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) struct ScoreReport {
@@ -134,6 +333,31 @@ pub(all) enum Severity {
   Medium
   High
   Critical
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ShockIndexInput {
+  heart_rate : Int
+  systolic_bp : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SirsInput {
+  temperature_tenths_c : Int
+  heart_rate : Int
+  respiratory_rate : Int
+  white_cell_count : Int
+  immature_neutrophils_percent : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SofaInput {
+  pao2_fio2 : Int
+  respiratory_support : Bool
+  platelets : Int
+  bilirubin_micromol : Int
+  mean_arterial_pressure : Int
+  vasopressor : VasopressorLevel
+  gcs_total : Int
+  creatinine_micromol : Int
+  urine_ml_day : Int
 } derive(Eq, @debug.Debug)
 
 pub(all) enum Spo2Scale {
@@ -160,7 +384,14 @@ pub(all) enum ValidationError {
   InvalidScale(field~ : String, value~ : Int)
 } derive(Eq, @debug.Debug)
 
+pub(all) enum VasopressorLevel {
+  None
+  DopamineLow
+  DopamineHigh
+  NorepinephrineLow
+  NorepinephrineHigh
+} derive(Eq, @debug.Debug)
+
 // Type aliases
 
 // Traits
-

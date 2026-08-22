@@ -13,6 +13,22 @@ MoonBit package with the same emergency-score scope was found.
 - qSOFA: public qSOFA description: respiratory rate >= 22/min, systolic blood
   pressure <= 100 mmHg, and altered mentation represented by GCS < 15.
 - Glasgow Coma Scale: public eye, verbal, and motor component score ranges.
+- SIRS: consensus threshold definition using temperature, pulse, respiratory
+  rate, white-cell count, and immature neutrophils.
+- MEWS: public early-warning band definitions for pressure, pulse, breathing,
+  temperature, and AVPU state.
+- SOFA: public six-domain organ-dysfunction bands, including PaO2/FiO2,
+  platelets, bilirubin, circulation, GCS, and renal measurements.
+- PEWS: a conservative, explicitly local-policy-dependent pediatric early
+  warning representation; the implementation documents its chosen domains and
+  does not claim universal age-specific thresholds.
+- CURB-65, Shock Index, and ROX Index: public rule definitions represented as
+  integer arithmetic where ratios are scaled by 100.
+
+No third-party source code is copied into this repository. The implementation
+is an original MoonBit expression of published scoring concepts; downstream
+users must verify thresholds against the protocol and population they intend
+to support.
 
 ## Authorship
 
