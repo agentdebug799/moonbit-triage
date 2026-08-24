@@ -21,7 +21,7 @@ metric and is not a substitute for correctness tests. To collect wall-clock
 data, run the command on the target machine with the installed stable MoonBit
 version and record the operating system, CPU, target, and command line.
 
-One local Windows PowerShell run on 2026-08-22 measured five warm-cache
-invocations at 144.80, 134.49, 137.40, 134.82, and 136.81 ms (arithmetic mean:
-137.66 ms), using MoonBit `0.1.20260807` and the native host runner. These are
+One local Windows PowerShell run on 2026-08-24 measured five warm-cache
+invocations at 129.10, 120.08, 122.17, 123.39, and 147.53 ms (arithmetic mean:
+128.45 ms), using MoonBit `0.1.20260824` and the native host runner. These are
 machine-specific observations, not portable performance guarantees.

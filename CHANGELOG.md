@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1
+
+- Updated release validation to the stable MoonBit toolchain `0.1.20260824`
+  with `moonc v0.10.10`.
+- Preserved the deterministic benchmark checksum and refreshed public source
+  and ecosystem documentation for package consumers.
+
 ## 0.4.0
 
 - Added validated renal/hepatic, neurologic, trauma, emergency, perioperative,

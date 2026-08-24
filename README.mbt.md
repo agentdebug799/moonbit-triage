@@ -117,7 +117,7 @@ chosen thresholds, patient population, units, and escalation policy.
 The checked-in benchmark runs 10,000 NEWS2 calculations and prints a checksum
 and count, making correctness and workload size reproducible without claiming
 hardware-independent latency. On the maintainer workstation with MoonBit
-`0.1.20260807`, the command produced:
+`0.1.20260824` (`moonc v0.10.10`), the command produced:
 
 ```text
 iterations=10000

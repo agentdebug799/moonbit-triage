@@ -1,10 +1,12 @@
 # Sources And Originality
 
-## Ecosystem Check
+## Ecosystem context
 
-Before implementation, mooncakes.io and web search were checked with keywords
-including `NEWS2`, `qSOFA`, `Glasgow Coma Scale`, and `triage MoonBit`. No mature
-MoonBit package with the same emergency-score scope was found.
+The package provides a dependency-free MoonBit implementation for explainable
+triage scoring, longitudinal observations, audit trails, and data-quality
+pipelines. Its public records, validation errors, explanations, and registry
+metadata are designed for reuse by CLI tools, forms, services, and other
+MoonBit packages.
 
 ## Scoring Sources
 
@@ -33,11 +35,11 @@ is an original MoonBit expression of published scoring concepts; downstream
 users must verify thresholds against the protocol and population they intend
 to support.
 
-## Authorship
+## Originality and attribution
 
-The repository is developed as a single-author competition project. There are no
-fictional contributors, generated co-authors, or copied source files from another
-MoonBit package.
+The implementation is an original MoonBit expression of publicly described
+scoring concepts. No third-party source code, patient data, proprietary tables,
+fictional contributors, or generated co-authors are included in this repository.
 
 ## Safety Boundary
 
